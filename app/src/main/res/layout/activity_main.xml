@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/gradient_background_1"
+    tools:context=".view.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_his"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/img_scanning"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33"
+        app:layout_constraintWidth_percent="0.5"
+        app:lottie_autoPlay="true"
+        app:lottie_imageAssetsFolder="raw"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/scanning" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/img_scanned"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/img_scanning"
+        app:layout_constraintLeft_toLeftOf="@id/img_scanning"
+        app:layout_constraintRight_toRightOf="@id/img_scanning"
+        app:layout_constraintTop_toTopOf="@id/img_scanning"
+        app:lottie_autoPlay="true"
+        app:lottie_imageAssetsFolder="raw"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ripple_single" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_heart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/img_scanning"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/img_scanning"
+        app:layout_constraintStart_toStartOf="@id/img_scanning"
+        app:layout_constraintTop_toTopOf="@id/img_scanning"
+        app:layout_constraintWidth_percent="0.24"
+        app:srcCompat="@drawable/png_empty_heart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+        android:textColor="#E0E0E0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        tools:text="0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
